@@ -1,0 +1,11 @@
+[package]
+name = "rust-thing"
+version = "0.1.0"
+edition = "2018"
+
+[lib]
+path = "lib.rs"
+crate-type = ["staticlib"]
+
+[dependencies]
+ocaml = { version = "0.18.1" }

@@ -1,0 +1,13 @@
+(dirs :standard \ target)
+
+(rule
+ (target librust_thing.a)
+ (deps Cargo.toml lib.rs)
+ (action
+  (progn
+   (run cargo build --release)
+   (run cp target/release/librust_thing.a .))))
+
+(executable
+ (name main)
+ (foreign_archives rust_thing))
